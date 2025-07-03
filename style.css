@@ -61,7 +61,7 @@ body {
 /* 시작 이미지 */
 .start-image {
   width: 100%;                     
-  max-width: 250px;                
+  max-width: 220px;                
   height: auto;
   margin-top: -10px;
 }
