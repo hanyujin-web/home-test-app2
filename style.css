@@ -93,6 +93,19 @@ body {
   margin-bottom: 14px;
 }
 
+/* 크레딧 */
+.global-footer {
+  position: fixed;
+  bottom: 40px;
+  left: 0;
+  right: 0;
+  text-align: center;
+  font-size: 14px;
+  color: #0d9083; 
+  pointer-events: none; /* 클릭 방지 */
+  z-index: 10000;
+}
+
 /* 질문 화면 */
 #question-screen {
   display: flex;
@@ -374,19 +387,6 @@ body {
 
 /* 이미지 */
 .test-image { width: 150px; margin-top: 2px; }
-
-/* 크레딧 */
-.global-footer {
-  position: fixed;
-  bottom: 40px;
-  left: 0;
-  right: 0;
-  text-align: center;
-  font-size: 14px;
-  color: #0d9083; 
-  pointer-events: none; /* 클릭 방지 */
-  z-index: 10000;
-}
 
 /* 반응형 */
 @media (max-width: 768px) {
