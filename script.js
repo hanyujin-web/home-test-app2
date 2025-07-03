@@ -1,23 +1,19 @@
 document.addEventListener("DOMContentLoaded", () => {
-  // 화면 요소 선택
   const progressBarInner = document.getElementById('progress-bar-inner');
   const startScreen = document.getElementById('start-screen');
   const questionScreen = document.getElementById('question-screen');
   const resultScreen = document.getElementById('result-screen');
-
   const startBtn = document.getElementById('start-btn');
   const backBtn = document.getElementById('back-btn');
   const questionText = document.getElementById('question-text');
   const questionImage = document.getElementById('question-image');
   const answerBtns = document.querySelectorAll('.answer-btn');
   const progressText = document.getElementById('progress-text');
-
   const resultTitle = document.getElementById('result-title');
   const resultDesc = document.getElementById('result-desc');
   const restartBtn = document.getElementById('restart-btn');
   const counterEl = document.getElementById('counter');
 
-  // 질문 데이터
   const questions = [
     { question: "나른한 햇살에 깬 주말 아침, <br>당신의 선택은?", answers: ["이불 속에서 뒹굴뒹굴 더 잔다", "친구를 만나러 갈 준비한다"], image: "img/question1.png" },
     { question: "약속 전날, 친구에게서 카톡이 왔다! <br>'미안.. 내일 못 놀 것 같아ㅠㅠ'", answers: ["오히려 좋아! 푹 쉬어야지", "괜찮아! 다른 약속이라도 잡아야지"], image: "img/question2.png" },
@@ -27,13 +23,11 @@ document.addEventListener("DOMContentLoaded", () => {
     { question: "다가오는 연휴, <br>3일 연속 쉬는 날이 생겼다!", answers: ["이런 날에는 무조건 집콕이지!", "하루가 아까워! 나가서 놀아야지"], image: "img/question6.png" }
   ];
 
-  // 상태 변수
   let currentQuestion = 0;
   let homeScore = 0;
   let outScore = 0;
   const answerHistory = [];
 
-  // 질문 출력 함수
   function showQuestion() {
     const q = questions[currentQuestion];
     questionText.innerHTML = q.question;
@@ -42,14 +36,12 @@ document.addEventListener("DOMContentLoaded", () => {
     answerBtns[1].textContent = q.answers[1];
     progressText.textContent = `${currentQuestion + 1} / ${questions.length}`;
     progressBarInner.style.width = `${((currentQuestion + 1) / questions.length) * 100}%`;
-
     answerBtns.forEach((btn, i) => {
       btn.classList.remove('show');
       setTimeout(() => btn.classList.add('show'), 100 + i * 150);
     });
   }
 
-  // 숫자 카운터 애니메이션
   function animateCounter(element, start, end, duration) {
     let startTime = null;
     function step(currentTime) {
@@ -62,10 +54,8 @@ document.addEventListener("DOMContentLoaded", () => {
     requestAnimationFrame(step);
   }
 
-  // 방문자 수 카운터 실행
-  if (counterEl) animateCounter(counterEl, 0, 10, 1000);
+  if (counterEl) animateCounter(counterEl, 0, 1357, 1000);
 
-  // 결과 출력 함수
   function showResult() {
     questionScreen.style.display = 'none';
     document.getElementById('loading-screen').style.display = 'flex';
@@ -73,7 +63,6 @@ document.addEventListener("DOMContentLoaded", () => {
     setTimeout(() => {
       document.getElementById('loading-screen').style.display = 'none';
       resultScreen.style.display = 'block';
-
       resultScreen.classList.remove('result-mint', 'result-pink', 'result-vi');
 
       if (homeScore >= outScore + 2) {
@@ -101,7 +90,6 @@ document.addEventListener("DOMContentLoaded", () => {
     }, 2500);
   }
 
-  // 게이지 설정
   function setGauges(energy, adventure, lightning) {
     const gauges = document.querySelectorAll(".gauge-fill");
     gauges.forEach(g => g.style.width = "0%");
@@ -112,12 +100,10 @@ document.addEventListener("DOMContentLoaded", () => {
     }, 150);
   }
 
-  // 요약 설정
   function setSummary(texts) {
     document.querySelector(".result-summary").innerHTML = texts.map(line => `<p>· ${line}</p>`).join("");
   }
 
-  // 버튼 이벤트
   startBtn.addEventListener('click', () => {
     startScreen.style.display = 'none';
     questionScreen.style.display = 'flex';
@@ -135,12 +121,11 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
-  // 뒤로가기 버튼
   backBtn.addEventListener('click', () => {
     if (currentQuestion === 0) {
       questionScreen.style.display = 'none';
       startScreen.style.display = 'flex';
-    } else if (currentQuestion > 0) {
+    } else {
       currentQuestion--;
       const lastAnswer = answerHistory.pop();
       if (lastAnswer === "home") homeScore--;
@@ -149,7 +134,6 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 
-  // 다시하기 버튼
   restartBtn.addEventListener('click', () => {
     resultScreen.style.display = 'none';
     startScreen.style.display = 'flex';
