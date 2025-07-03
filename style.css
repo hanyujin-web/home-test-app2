@@ -36,6 +36,21 @@ body {
   background-color: #33cabb;
 }
 
+#start-screen h1 {
+  font-family: 'Jalnan', sans-serif;
+  font-size: 40px;
+  line-height: 55px;
+  color: #fff;
+  margin-top: -10px;
+  margin-bottom: 15px; /* 아래쪽 여백 제거 */
+}
+
+#start-screen p {
+  font-size: 22px;
+  color: #e2fffd;
+  margin-top: 0; /* 제목과 붙게 위쪽 여백 제거 */
+}
+
 /* 반응형: 작은 화면에서 padding을 더 줄임 */
 @media (max-width: 480px) {
   #start-screen {
