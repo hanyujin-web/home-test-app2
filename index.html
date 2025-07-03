@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>밖순이 집순이 테스트</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- 시작 화면 -->
+  <div id="start-screen">
+    <div class="start-content">
+      <p>30초 만에 알아보는</p>
+      <h1>집순이<br>성향 테스트</h1>
+    </div>
+    <img src="img/start-cat.png" alt="시작화면 고양이" class="start-image" />
+    <div class="participant-counter">
+      지금까지 <span id="counter">0</span>명이 참여했어요!
+    </div>    
+    <button id="start-btn">시작하기</button>
+     <!-- 크레딧: 페이지 하단 고정 -->
+     <footer class="global-footer">© 2025 Hanyu. All rights reserved.</footer>
+  </div>
+
+  <!-- 질문 화면 -->
+  <div id="question-screen" style="display: none; flex-direction: column; align-items: center;">
+    <div class="progress-container">
+      <button id="back-btn" class="back-btn" aria-label="뒤로가기">
+        <img src="img/return.png" alt="뒤로가기 아이콘" />
+      </button>
+      <div class="progress-bar-wrapper">
+        <div id="progress-text">1 / 6</div>
+        <div class="progress-bar">
+          <div class="progress-bar-inner" id="progress-bar-inner"></div>
+        </div>
+      </div>
+    </div>
+
+    <img id="question-image" src="" alt="질문 이미지" class="test-image" />
+    <h2 id="question-text">질문이 표시됩니다</h2>
+
+    <div class="answer-container">
+      <button class="answer-btn" data-value="1">선택지 1</button>
+      <button class="answer-btn" data-value="2">선택지 2</button>
+    </div>
+  </div>
+
+  <!-- 로딩 화면 -->
+<div id="loading-screen" style="display: none;">
+  <div class="loading-text">결과 분석중...</div>
+</div>
+
+  <!-- 결과 화면 -->
+  <div id="result-screen" class="result-screen" style="display: none;">
+    <h2 id="result-title" class="result-title">초강력 집순이</h2>
+    <p id="result-desc" class="result-desc">당신은 집과 하나 된 진정한 집순이!</p>
+
+    <div class="result-image">
+      <img src="img/result1.png" alt="결과 캐릭터 이미지" />
+    </div>
+
+    <div class="gauge-container">
+      <div class="gauge">
+        <span class="gauge-label">에너지력</span>
+        <div class="gauge-bar">
+          <div class="gauge-fill"></div>
+        </div>
+      </div>
+      <div class="gauge">
+        <span class="gauge-label">집콕력</span>
+        <div class="gauge-bar">
+          <div class="gauge-fill"></div>
+        </div>
+      </div>
+      <div class="gauge">
+        <span class="gauge-label">번개력</span>
+        <div class="gauge-bar">
+          <div class="gauge-fill"></div>
+        </div>
+      </div>
+    </div>
+
+    <hr class="result-divider"> <!-- 구분선 추가 -->
+
+    <div class="result-summary">
+      <p>· 효율을 중시하는 능률형 인간</p>
+      <p>· 워터지 착착 해내는 성실러</p>
+      <p>· 감정에 쉽게 흔들리지 않는 편</p>
+    </div>
+
+    <button id="restart-btn">다시하기</button>
+  </div>
+  <script src="script.js" defer></script>
+</body>
+</html>
