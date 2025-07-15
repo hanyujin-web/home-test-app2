@@ -26,6 +26,7 @@ body {
 
 /* 시작 화면 */
 #start-screen {
+  min-height: 100dvh;
   display: flex;
   flex-direction: column;
   justify-content: center;         
@@ -79,7 +80,7 @@ body {
   background: linear-gradient(90deg, #ffffff, #ffffff);
   color: #2bb1a4;
   transition: background 0.1s;
-  margin-bottom: 50px; 
+  margin-bottom: 60px; 
 }
 
 
@@ -97,7 +98,7 @@ body {
 /* 크레딧 */
 .global-footer {
   position: fixed;
-  bottom: 0;
+  bottom: 20px;
   left: 0;
   right: 0;
   text-align: center;
@@ -405,7 +406,10 @@ body {
   #start-screen h1 { font-size: 42px; }
   #start-screen p { font-size: 22px; }
   #start-screen {
-    padding-bottom: 70px; 
+    padding-bottom: 30px 10px 120px;
+  }
+  #start-screen button {
+    margin-bottom: 60px;
   }
   #restart-btn { font-size: 18px; padding: 0 15px; width:  200px; }
 }
