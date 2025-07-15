@@ -177,6 +177,13 @@ body {
   white-space: pre-line;
 }
 
+@media (min-width: 769px) {
+  #question-text {
+    font-size: 22px;
+    line-height: 35px;
+  }
+}
+
 .answer-container {
   display: flex;
   flex-direction: column;
@@ -223,6 +230,13 @@ body {
   -webkit-tap-highlight-color: transparent;
   -moz-tap-highlight-color: transparent;
   user-select: none; /* 텍스트 선택 방지 */
+}
+
+@media (min-width: 769px) {
+  #question-screen .answer-btn {
+    font-size: 20px; /* ← 원하는 텍스트 크기로 변경 */
+    line-height: 1.4;
+  }
 }
 
 .answer-btn:focus,
@@ -328,14 +342,20 @@ body {
   background-color: #33cabb;
 }
 
-.result-summary p {
+.result-summary {
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
+  align-items: center;  /* 전체 영역을 가운데로 정렬 */
+}
+
+.result-summary p {
   margin: 8px 0;
   font-size: 16px;
   color: #555;
   padding: 0 30px;
+  text-align: left;       /* 본문은 왼쪽 정렬 */
+  width: 100%;            /* padding과 함께 줄 맞추기 */
+  max-width: 400px;       /* 너무 길지 않게 제한 */
 }
 
 .result-divider {
