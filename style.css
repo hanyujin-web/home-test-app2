@@ -32,7 +32,7 @@ body {
   flex-direction: column;
   justify-content: space-between;
   min-height: 100dvh;
-  padding: 40px 20px;
+  padding: 100px 20px 40px;
   background-color: #33cabb;
 }
 
@@ -387,7 +387,7 @@ body {
 
 /* 시작이미지 그룹 */
 .start-content {
-  margin-top: 100px; /* ✅ 상단 여백 추가 */
+  margin-top: 0 !important;
 }
 
 /* 반응형 */
@@ -406,13 +406,13 @@ body {
   #start-screen h1 { font-size: 42px; }
   #start-screen p { font-size: 22px; }
   #start-screen {
-    padding-bottom: 120px;
+    padding: 60px 10px 40px;
   }
   #start-screen button {
     margin-bottom: 60px;
   }
   .start-content {
-    margin-top: 80px; /* 모바일에서는 조금 줄여서 */
+    margin-top: 0 !important;
   }
   #restart-btn { font-size: 18px; padding: 0 15px; width:  200px; }
 }
