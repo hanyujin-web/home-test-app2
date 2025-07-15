@@ -404,7 +404,7 @@ body {
   #start-screen h1 { font-size: 42px; }
   #start-screen p { font-size: 22px; }
   #start-screen {
-    padding-bottom: 120px; /* footer 고정이기 때문에 화면이 작아도 여백 유지 */
+    padding-bottom: 100px; 
   }
   #restart-btn { font-size: 18px; padding: 0 15px; width:  200px; }
 }
