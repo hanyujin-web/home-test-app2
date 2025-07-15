@@ -28,14 +28,11 @@ body {
 
 /* 시작 화면 */
 #start-screen {
-  min-height: 100dvh;  /* 모바일 주소창 포함한 동적 높이 대응 */
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  padding: 40px 20px 140px; /* 아래 footer와 버튼 공간 확보 */
-  background-color: #33cabb;
-  box-sizing: border-box;
+  justify-content: space-between;
+  min-height: 100dvh;
+  padding: 40px 20px;
 }
 
 #start-screen h1 {
@@ -97,15 +94,12 @@ body {
 
 /* 크레딧 */
 .global-footer {
-  position: fixed;
-  bottom: 20px;  /* 너무 아래면 iOS 하단 바에 가림 */
-  left: 0;
-  right: 0;
+  position: relative;
+  margin-top: auto;
   text-align: center;
   font-size: 14px;
   color: #0d9083;
   pointer-events: none;
-  z-index: 10000;
 }
 
 /* 질문 화면 */
