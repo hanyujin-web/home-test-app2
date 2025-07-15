@@ -4,101 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>밖순이 집순이 테스트</title>
-  <style>
-    @font-face {
-      font-family: 'SUIT-Medium';
-      src: url('./fonts/SUIT-Medium.ttf') format('truetype');
-      font-weight: normal;
-      font-style: normal;
-    }
-    @font-face {
-      font-family: 'Jalnan';
-      src: url('./fonts/Jalnan.ttf') format('truetype');
-      font-weight: bold;
-      font-style: normal;
-    }
-
-    html, body {
-      height: 100%;
-      margin: 0;
-      padding: 0;
-      font-family: 'SUIT-Medium', 'Arial', 'Noto Sans KR', sans-serif;
-      background-color: #33cabb;
-      color: #333;
-      text-align: center;
-    }
-
-    #start-screen {
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      min-height: 100dvh;
-      padding: 40px 20px;
-      box-sizing: border-box;
-    }
-
-    .start-content p {
-      font-size: 18px;
-      color: #e2fffd;
-      margin: 0;
-    }
-
-    .start-content h1 {
-      font-family: 'Jalnan', sans-serif;
-      font-size: 40px;
-      line-height: 50px;
-      color: #fff;
-      margin: 5px 0 20px;
-    }
-
-    .start-image {
-      width: 100%;
-      max-width: 220px;
-      height: auto;
-      margin: 0 auto 16px;
-    }
-
-    .participant-counter {
-      font-size: 16px;
-      color: #07554e;
-      margin-bottom: 16px;
-    }
-
-    #start-btn {
-      cursor: pointer;
-      border: none;
-      padding: 15px 20px;
-      width: 100%;
-      max-width: 200px;
-      font-size: 20px;
-      border-radius: 8px;
-      background: #fff;
-      color: #2bb1a4;
-      transition: background 0.2s ease;
-      margin: 0 auto 40px;
-    }
-
-    #start-btn:hover {
-      background: #2bb1a4;
-      color: white;
-    }
-
-    .global-footer {
-      font-size: 14px;
-      color: #0d9083;
-      margin-top: auto;
-      pointer-events: none;
-    }
-
-    /* 모바일 대응 */
-    @media (max-width: 480px) {
-      .start-content h1 { font-size: 32px; line-height: 42px; }
-      .start-content p { font-size: 16px; }
-      .participant-counter { font-size: 14px; }
-      #start-btn { font-size: 18px; padding: 12px 18px; }
-      #start-screen { padding: 30px 16px; }
-    }
-  </style>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
@@ -113,10 +19,78 @@
       지금까지 <span id="counter">0</span>명이 참여했어요!
     </div>    
     <button id="start-btn">시작하기</button>
-    <footer class="global-footer">© 2025 Hanyu. All rights reserved.</footer>
+       <!-- 크레딧: 페이지 하단 고정 -->
+       <footer class="global-footer">© 2025 Hanyu. All rights reserved.</footer>
   </div>
 
-  <!-- 질문, 결과 등은 script.js로 제어되므로 이 화면은 그대로 유지 -->
+  <!-- 질문 화면 -->
+  <div id="question-screen" style="display: none; flex-direction: column; align-items: center;">
+    <div class="progress-container">
+      <button id="back-btn" class="back-btn" aria-label="뒤로가기">
+        <img src="img/return.png" alt="뒤로가기 아이콘" />
+      </button>
+      <div class="progress-bar-wrapper">
+        <div id="progress-text">1 / 6</div>
+        <div class="progress-bar">
+          <div class="progress-bar-inner" id="progress-bar-inner"></div>
+        </div>
+      </div>
+    </div>
+
+    <img id="question-image" src="" alt="질문 이미지" class="test-image" />
+    <h2 id="question-text">질문이 표시됩니다</h2>
+
+    <div class="answer-container">
+      <button class="answer-btn" data-value="1">선택지 1</button>
+      <button class="answer-btn" data-value="2">선택지 2</button>
+    </div>
+  </div>
+
+  <!-- 로딩 화면 -->
+<div id="loading-screen" style="display: none;">
+  <div class="loading-text">결과 분석중...</div>
+</div>
+
+  <!-- 결과 화면 -->
+  <div id="result-screen" class="result-screen" style="display: none;">
+    <h2 id="result-title" class="result-title">초강력 집순이</h2>
+    <p id="result-desc" class="result-desc">당신은 집과 하나 된 진정한 집순이!</p>
+
+    <div class="result-image">
+      <img src="img/result1.png" alt="결과 캐릭터 이미지" />
+    </div>
+
+    <div class="gauge-container">
+      <div class="gauge">
+        <span class="gauge-label">에너지력</span>
+        <div class="gauge-bar">
+          <div class="gauge-fill"></div>
+        </div>
+      </div>
+      <div class="gauge">
+        <span class="gauge-label">집콕력</span>
+        <div class="gauge-bar">
+          <div class="gauge-fill"></div>
+        </div>
+      </div>
+      <div class="gauge">
+        <span class="gauge-label">번개력</span>
+        <div class="gauge-bar">
+          <div class="gauge-fill"></div>
+        </div>
+      </div>
+    </div>
+
+    <hr class="result-divider"> <!-- 구분선 추가 -->
+
+    <div class="result-summary">
+      <p>· 효율을 중시하는 능률형 인간</p>
+      <p>· 워터지 착착 해내는 성실러</p>
+      <p>· 감정에 쉽게 흔들리지 않는 편</p>
+    </div>
+
+    <button id="restart-btn">다시하기</button>
+  </div>
   <script src="script.js" defer></script>
 </body>
 </html>
