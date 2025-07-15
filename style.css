@@ -31,7 +31,8 @@ body {
   justify-content: center;         
   align-items: center;
   height: 100vh;
-  padding: 40px 20px;             
+  padding: 40px 20px;        
+  padding-bottom: 100px;     
   box-sizing: border-box;
   background-color: #33cabb;
 }
@@ -78,7 +79,7 @@ body {
   background: linear-gradient(90deg, #ffffff, #ffffff);
   color: #2bb1a4;
   transition: background 0.1s;
-  margin-bottom: 30px; 
+  margin-bottom: 50px; 
 }
 
 
@@ -96,7 +97,7 @@ body {
 /* 크레딧 */
 .global-footer {
   position: fixed;
-  bottom: 40px;
+  bottom: 0;
   left: 0;
   right: 0;
   text-align: center;
