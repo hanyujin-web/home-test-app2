@@ -14,6 +14,8 @@
 
 html, body {
   height: 100%;
+  margin: 0;
+  padding: 0;
 }
 
 body {
@@ -32,7 +34,7 @@ body {
   justify-content: center;         
   align-items: center;
   height: 100vh;
-  padding: 40px 20px;        
+  padding: 40px 20px 140px;       
   padding-bottom: 100px;     
   box-sizing: border-box;
   background-color: #33cabb;
@@ -406,7 +408,7 @@ body {
   #start-screen h1 { font-size: 42px; }
   #start-screen p { font-size: 22px; }
   #start-screen {
-    padding-bottom: 30px 10px 120px;
+    padding-bottom: 120px;
   }
   #start-screen button {
     margin-bottom: 60px;
