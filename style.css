@@ -93,19 +93,6 @@ body {
   margin-bottom: 14px;
 }
 
-/* 크레딧 */
-.global-footer {
-  position: fixed;
-  bottom: 40px;
-  left: 0;
-  right: 0;
-  text-align: center;
-  font-size: 14px;
-  color: #0d9083; 
-  pointer-events: none; /* 클릭 방지 */
-  z-index: 10000;
-}
-
 /* 질문 화면 */
 #question-screen {
   display: flex;
@@ -183,8 +170,8 @@ body {
 }
 
 #question-text {
-  font-size: 30px;
-  line-height: 30px;
+  font-size: 24px;
+  line-height: 35px;
   margin: 10px 0;
   max-width: 600px;
   white-space: pre-line;
