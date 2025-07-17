@@ -408,6 +408,7 @@ body {
   #question-text { font-size: 20px; }
   .answer-btn { font-size: 18px; padding: 16px 12px; }
   .answer-container { max-width: 95%; }
+  .result-summary { width: 83%; margin: 0 auto; padding: 0; align-items: center; }
   #start-screen h1 { font-size: 42px; }
   #start-screen p { font-size: 22px; }
   #restart-btn { font-size: 18px; padding: 0 15px; width:  200px; }
